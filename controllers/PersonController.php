@@ -2,14 +2,12 @@
 
 include('../models/Person.php');
 
-switch ($_POST['action'])
+class PersonController
 {
-	case 'insert':
+	public static function insert() {
 		$person = new Person($_POST['person']);
 		print_r($person);
-		break;
-	default:
-		# code...
-		break;
+	}
 }
 
+PersonController::$_POST['action']();
